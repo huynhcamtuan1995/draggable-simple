@@ -1,0 +1,56 @@
+﻿@{
+
+}
+@section Styles{
+}
+
+@section ScriptLibs{
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+}
+
+<div>
+    <h1>Testing dragble page</h1>
+    <div class="mb-4">
+
+        <button v-on:click="addElement('a')" class="btn-add col-2">add a</button>
+        <button v-on:click="addElement('span')" class="btn-add col-2">add span</button>
+        <button v-on:click="addElement('button')" class="btn-add col-2">add button</button>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <div class="parent-frame" v-on:click="configElement($event)" style="background-image: url('/image/mega-popup.png')">
+                <div v-on:click="configElement($event)"
+                     class="draggable"
+                     id="drag-1"
+                     data-x="810"
+                     data-y="0"
+                     style="left: 791px; top: 144px; width: 30px; height: 30px;">
+                    <a href="#" data-href="http://uat.vietcredit.vn/">
+                        <button style=" background: url('/image/close-default.png'); background-color:transparent; background-repeat: no-repeat; background-size:contain;"></button>
+                    </a>
+                </div>
+                <div v-on:click="configElement($event)" class="draggable" id="drag-2" data-x="438" data-y="337" style="left: 438px; top: 337px; width: 298px; height: 58px;">
+                    <a href="#" data-href="http://uat.vietcredit.vn/" style="
+                        background: url('/image/mega-button-default.png') 100% 100% / cover no-repeat transparent;
+                        background-position: center;
+                    "></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div>
+                <input id="src-data" value="mega-popup.png" class="mb-4" type="text" />
+                <button v-on:click="applyConfig('popup')">Apply</button>
+            </div>
+            <div>
+                <button v-on:click="getListElement" class="mb-4">GET</button>
+                <button v-on:click="setPopup" class="mb-4 ml-auto">POPUP</button>
+                <textarea rows="16" readonly class="show-obj w-100"></textarea>
+            </div> 
+        </div>
+    </div>
+    <div id="popup">
+
+    </div>
+</div>

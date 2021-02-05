@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>dragable_sample</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="interact.js\**" />
+    <Content Remove="interact.js\**" />
+    <EmbeddedResource Remove="interact.js\**" />
+    <None Remove="interact.js\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+</Project>
